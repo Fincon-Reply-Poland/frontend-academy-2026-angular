@@ -1,0 +1,10 @@
+<label for="user-search">Szukaj użytkownika</label>
+<input
+  id="user-search"
+  type="search"
+  name="query"
+  placeholder="Imię lub e-mail..."
+  [disabled]="disabled()"
+  [ngModel]="query()"
+  (ngModelChange)="query.set($event)"
+/>

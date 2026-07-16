@@ -1,0 +1,38 @@
+<main class="page">
+  <header>
+    <h1>Users App</h1>
+    <p class="subtitle">Ale praca domowa</p>
+  </header>
+
+  <section class="toolbar">
+    <app-user-search [(query)]="query" [disabled]="isLoading()" />
+    <button type="button" [disabled]="isLoading()" (click)="loadUsers()">Odśwież</button>
+  </section>
+
+  @if (isLoading()) {
+    <p class="status" data-testid="loading">Ładowanie użytkowników...</p>
+  }
+
+  @if (errorMessage()) {
+    <p class="status error" role="alert">{{ errorMessage() }}</p>
+  }
+
+  @if (!isLoading() && !errorMessage()) {
+    <section class="content">
+      <div class="panel">
+        <h2>Lista użytkowników</h2>
+        <app-user-list
+          [users]="filteredUsers()"
+          [selectedUserId]="selectedUser()?.id ?? null"
+          (userSelected)="selectUser($event)"
+        />
+      </div>
+      <aside class="panel">
+        <h2>Szczegóły</h2>
+        <app-user-details [user]="selectedUser()" />
+      </aside>
+    </section>
+  }
+
+  <app-user-form (userCreated)="addUser($event)" />
+</main>

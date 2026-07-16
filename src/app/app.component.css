@@ -1,0 +1,13 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px max(24px, calc((100vw - 1040px) / 2));
+  border-bottom: 1px solid #34384b;
+  background: rgb(15 17 26 / 85%);
+}
+.brand, nav a { color: #f7f7fb; font-weight: 750; text-decoration: none; }
+nav { display: flex; gap: 18px; }
+nav a { color: #b8b8c7; font-weight: 600; }
+nav a:hover { color: #ffffff; }

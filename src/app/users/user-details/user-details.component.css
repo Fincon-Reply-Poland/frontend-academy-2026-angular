@@ -1,0 +1,5 @@
+h3 { margin-top: 0; }
+dl { display: grid; gap: 14px; margin: 0; }
+dt { color: #b8b8c7; font-size: 12px; text-transform: uppercase; }
+dd { margin: 3px 0 0; }
+.empty { color: #b8b8c7; }

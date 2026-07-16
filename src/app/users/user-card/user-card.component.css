@@ -1,0 +1,7 @@
+.user-card {
+  width: 100%; display: grid; gap: 4px; padding: 12px 16px; color: #f7f7fb;
+  text-align: left; background: #25293a; border: 1px solid transparent; border-radius: 10px;
+}
+.user-card:hover { background: #303448; }
+.user-card.selected { background: #342b50; border-color: #d88cff; }
+span { color: #b8b8c7; font-size: 14px; }
